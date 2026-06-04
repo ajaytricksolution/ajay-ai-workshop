@@ -3,660 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National All India Council for Computer Training Centre</title>
+    <title>KVS/NVS/CBSE Aligned AI, Robotics & Digital Marketing Curriculum</title>
     <style>
         :root {
-            --primary-blue: #0b4da2;
-            --dark-blue: #083c82;
-            --accent-red: #e30613;
-            --notice-purple: #4a2e80;
-            --text-dark: #333333;
-            --light-gray: #f8fafc;
+            --primary: #1e3a8a;
+            --secondary: #0d9488;
+            --accent-orange: #ea580c;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fcefe6; /* इमेजेस के बैकग्राउंड मैचिंग */
+            background-color: #f8fafc;
             color: var(--text-dark);
-            scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* 1. TOP MINI BAR */
-        .top-mini-bar {
-            background-color: var(--primary-blue);
+        /* Hero / Header Section */
+        .hero {
+            background: var(--bg-gradient);
             color: white;
-            padding: 8px 40px;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .badge.kvs { border-left: 4px solid #b45309; }
+        .badge.nvs { border-left: 4px solid #3b82f6; }
+        .badge.cbse { border-left: 4px solid #10b981; }
+
+        .hero h1 {
+            font-size: 38px;
+            margin: 10px 0;
+            font-weight: 800;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 15px auto 0 auto;
+        }
+
+        /* Container & Section Styling */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Main Curriculum Table / Grid Design */
+        .curriculum-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .class-row {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .class-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Table Header Row Style for Top Section Headings */
+        .class-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            font-size: 20px;
+            font-weight: 700;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
         }
 
-        .login-panel-btn {
-            background: linear-gradient(to bottom, #ec4899, #db2777);
-            color: white;
-            border: 1px solid #be185d;
-            padding: 5px 18px;
-            border-radius: 15px;
-            font-weight: bold;
-            text-decoration: none;
+        .class-tag {
+            background: var(--accent-orange);
             font-size: 12px;
-            transition: transform 0.2s;
-        }
-        .login-panel-btn:hover { transform: scale(1.05); }
-
-        /* 2. MAIN INSTITUTION HEADER */
-        .main-header {
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .header-logo {
-            width: 90px;
-            height: 90px;
-            background-color: #0b4da2;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            border: 3px solid #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .header-text h1 {
-            color: #0b2e6e;
-            font-size: 28px;
-            margin: 0 0 5px 0;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-        .header-text .sub-tag {
-            background-color: #1e3a8a;
-            color: white;
-            font-size: 13px;
-            padding: 4px 18px;
+            padding: 4px 12px;
             border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-
-        .header-text p {
-            margin: 4px 0;
-            font-size: 13px;
-            font-weight: bold;
-            color: #444;
-        }
-
-        /* 3. NAVIGATION MENU */
-        .main-nav {
-            background-color: var(--primary-blue);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-links {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 12px 16px;
-            font-size: 13px;
-            font-weight: bold;
-            display: block;
-            transition: background 0.2s;
-        }
-
-        .nav-links a.active { background-color: var(--accent-red); }
-        .nav-links a:hover:not(.active) { background-color: rgba(255,255,255,0.15); }
-
-        /* 4. 3 BIG ACTION BUTTONS */
-        .action-buttons-container {
-            max-width: 1200px;
-            margin: 25px auto 10px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            padding: 0 20px;
-        }
-
-        .action-btn {
-            background-color: #0d2847;
-            color: white;
-            text-align: center;
-            padding: 14px;
-            font-weight: bold;
-            font-size: 14px;
-            text-decoration: none;
-            border-radius: 4px;
-            border-bottom: 4px solid #051424;
-            transition: all 0.2s;
-        }
-        .action-btn:hover { background-color: #133a66; transform: translateY(-2px); }
-
-        /* 5. MAIN HERO WORKSPACE (BANNER + NOTICE BOARD) */
-        .hero-section {
-            max-width: 1200px;
-            margin: 15px auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
-
-        .banner-box {
-            background: #cbd5e1;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            height: 340px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #334155;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('annual-meeting-placeholder.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .notice-board {
-            background-color: var(--notice-purple);
-            border-radius: 6px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 340px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .notice-title {
-            background-color: #dcfce7;
-            color: #166534;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 15px;
-            border-bottom: 2px solid #bbf7d0;
-        }
-
-        .notice-content-scroll {
-            padding: 15px;
-            color: white;
-            font-size: 13.5px;
-            overflow-y: auto;
-            flex: 1;
-        }
-
-        .notice-content-scroll ul { padding-left: 20px; margin: 0; }
-        .notice-content-scroll li { margin-bottom: 18px; line-height: 1.6; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 10px; }
-
-        .new-tag {
-            background-color: #ef4444;
-            color: white;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 6px;
-            animation: blink 1s infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* 6. STRIP BANNER */
-        .welcome-bar {
-            background-color: #3b82f6;
-            color: white;
-            text-align: center;
-            padding: 14px;
-            font-size: 18px;
-            font-weight: bold;
-            margin: 30px 0;
-            border-bottom: 4px solid var(--primary-blue);
-        }
-
-        /* 7. COUNTER / STATS SECTION (For Educational Credibility) */
-        .stats-section {
-            max-width: 1200px;
-            margin: 30px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-            text-align: center;
-        }
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-blue);
-        }
-        .stat-card h3 { font-size: 32px; margin: 0 0 5px 0; color: var(--primary-blue); }
-        .stat-card p { margin: 0; font-weight: bold; color: #555; }
-
-        /* 8. FEATURED COURSES SECTION */
-        .courses-section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .section-heading {
-            text-align: center;
-            color: var(--primary-blue);
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 30px;
             text-transform: uppercase;
         }
-        .courses-grid {
+
+        /* Three Column Pillars Layout */
+        .pillar-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            border-top: 1px solid #e2e8f0;
         }
-        .course-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
-        }
-        .course-card:hover { transform: translateY(-5px); }
-        .course-header { background: var(--primary-blue); color: white; padding: 15px; font-weight: bold; font-size: 16px; }
-        .course-body { padding: 20px; font-size: 14px; color: #555; }
-        .course-body ul { padding-left: 20px; margin: 0; }
-        .course-body li { margin-bottom: 8px; }
 
-        /* 9. FRANCHISE APPLICATION FORM SECTION (image_5dbd18.jpg) */
-        .franchise-section {
-            max-width: 1200px;
-            margin: 50px auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 35px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        .pillar {
+            padding: 25px;
+            border-right: 1px solid #e2e8f0;
         }
-        .form-grid-layout {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 40px;
-        }
-        @media (max-width: 768px) { .form-grid-layout { grid-template-columns: 1fr; } }
 
-        .franchise-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
+        .pillar:last-child {
+            border-right: none;
         }
-        @media (max-width: 480px) { .franchise-form { grid-template-columns: 1fr; } }
 
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
-        .full-row { grid-column: span 2; }
-        @media (max-width: 480px) { .full-row { grid-column: span 1; } }
+        @media (max-width: 768px) {
+            .pillar {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            .pillar:last-child {
+                border-bottom: none;
+            }
+        }
 
-        label { font-size: 13.5px; font-weight: bold; }
-        label span { color: var(--accent-red); }
-        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-        textarea { height: 90px; resize: vertical; }
-
-        .submit-btn {
-            grid-column: span 2;
-            justify-self: start;
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #ccc;
-            padding: 10px 25px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        .submit-btn:hover { background-color: #e0e0e0; }
-
-        /* Right Side Promo of Form */
-        .info-side {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .handshake-banner {
-            width: 100%;
-            height: 230px;
-            background: #cbd5e1 url('image_5dbd18.jpg') center/cover no-repeat;
-            border-radius: 4px;
-            margin-bottom: 25px;
-            border: 1px solid #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #333;
-        }
-        .promo-text h3 { color: #7b1fa2; font-size: 24px; margin: 0 0 8px 0; font-weight: bold; }
-        .promo-text p { color: #00bcd4; font-weight: bold; font-size: 16px; margin: 0 0 20px 0; }
-        .phone-call { font-size: 24px; font-weight: bold; color: #222; letter-spacing: 0.5px; }
-
-        /* 10. FOOTER SYSTEM */
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-top: 6px solid var(--primary-blue);
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            font-size: 14px;
-        }
-        .footer-col h4 {
-            color: white;
+        .pillar h3 {
+            margin: 0 0 15px 0;
             font-size: 16px;
-            margin-0: 0 0 15px 0;
-            border-bottom: 2px solid var(--primary-blue);
-            padding-bottom: 8px;
-            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .footer-col p { line-height: 1.6; margin: 5px 0; }
-        
-        .footer-bottom {
+
+        .ai-title { color: #2563eb; }
+        .robotics-title { color: #db2777; }
+        .marketing-title { color: #0d9488; }
+
+        .pillar ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #475569;
+            font-size: 14.5px;
+        }
+
+        .pillar li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1e293b;
-            font-size: 13px;
-        }
-
-        /* FLOATING SIDEBAR FOR QUICK CONTACT */
-        .quick-contact-sidebar {
-            position: fixed;
-            right: 0;
-            top: 45%;
-            background-color: #00bcd4;
-            color: white;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            padding: 15px 8px;
-            font-weight: bold;
-            font-size: 13px;
-            border-radius: 4px 0 0 4px;
-            text-decoration: none;
-            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        /* FIXED FIXED BUTTONS */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            padding: 14px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 30px 20px;
+            margin-top: 60px;
             font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 9999;
+            border-top: 4px solid var(--secondary);
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. TOP MINI BAR -->
-    <div class="top-mini-bar">
-        <a href="#" class="login-panel-btn">Login Panel</a>
-        <div>📞 Helpdesk: 9932003362 / 8016785877</div>
+    <!-- HERO SECTION WITH EDUCATION BADGES -->
+    <div class="hero">
+        <div class="badge-container">
+            <div class="badge kvs">KVS Compliant</div>
+            <div class="badge nvs">NVS Aligned</div>
+            <div class="badge cbse">CBSE Skill Subject Pattern</div>
+        </div>
+        <h1>Next-Gen Tech Curriculum Portal</h1>
+        <p>A comprehensive, future-ready Class 1 to Class 10 training framework mapping Artificial Intelligence, Next-Gen Robotics Coding, and Strategic Digital Marketing Frameworks.</p>
     </div>
 
-    <!-- 2. MAIN HEADER (image_5db9f8.jpg के आधार पर) -->
-    <div class="main-header">
-        <div class="header-container">
-            <div class="header-logo">NAI CCTC LOGO</div>
-            <div class="header-text">
-                <h1>NATIONAL ALL INDIA COUNCIL FOR COMPUTER TRAINING CENTRE</h1>
-                <div class="sub-tag">An ISO 9001:2015 Certified Organization</div>
-                <p>(An Autonomous Instt. Regd. Under the Public Trust Act - Govt. of India, New Delhi)</p>
-                <p style="color: var(--primary-blue); font-size: 12px; margin-top: 5px;">Email:- info@naicctc.co.in :: Website:- www.naicctc.co.in</p>
-            </div>
-        </div>
-    </div>
+    <!-- MAIN SYLLABUS LAYOUT -->
+    <div class="container">
+        <div class="section-title">Class-Wise Master Syllabus (1 - 10)</div>
 
-    <!-- 3. NAVIGATION MENU -->
-    <nav class="main-nav">
-        <div class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#courses">Courses</a>
-            <a href="#franchise">Online Franchisee</a>
-            <a href="#">Centers</a>
-            <a href="#">Online Exam</a>
-            <a href="#">Downloads</a>
-            <a href="#">Contacts</a>
-            <a href="#">Login Panel</a>
-            <a href="#">Jobs</a>
-            <a href="#">Mock Test <span class="new-tag">New</span></a>
-        </div>
-    </nav>
+        <div class="curriculum-grid">
 
-    <!-- 4. 3 ACTION LINKS -->
-    <div class="action-buttons-container">
-        <a href="#" class="action-btn">Students General Enquiry Form</a>
-        <a href="#" class="action-btn">Marksheet & Certificate Verification</a>
-        <a href="#" class="action-btn">Check Enrollment & Result</a>
-    </div>
-
-    <!-- 5. MAIN HERO AREA (BANNER + NOTICE BOARD) -->
-    <div class="hero-section">
-        <!-- Main Graphic Carousel Banner -->
-        <div class="banner-box">
-            <!-- Background Image handles Image Layout Verification -->
-            <span style="background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 4px;">Annual Meeting 2024-2025 Photo Frame</span>
-        </div>
-
-        <!-- Scrolling Notice Board -->
-        <div class="notice-board">
-            <div class="notice-title">Notice Board</div>
-            <div class="notice-content-scroll">
-                <ul>
-                    <li>
-                        <strong>Mock Test Facility:</strong> Online Mock Test Facility Introduced for our students and also for outside visitors. Please click on the "Mock Test" link in the menu bar. <span class="new-tag">New</span>
-                    </li>
-                    <li>
-                        <strong>Exam Schedule:</strong> Online Examination Facility available for all registered students from all branches across states.
-                    </li>
-                    <li>
-                        <strong>Franchise Registration:</strong> Apply now for new academic cycle franchise allocations via the lower portal interface.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 6. BOTTOM STRIP WELCOME BANNER -->
-    <div class="welcome-bar">
-        Welcome to NATIONAL ALL INDIA COUNCIL FOR COMPUTER TRAINING CENTRE
-    </div>
-
-    <!-- 7. EDUCATIONAL VALUE STATS BLOCK -->
-    <div class="stats-section">
-        <div class="stat-card">
-            <h3>500+</h3>
-            <p>Verified Training Centers</p>
-        </div>
-        <div class="stat-card">
-            <h3>25,000+</h3>
-            <p>Students Certified</p>
-        </div>
-        <div class="stat-card">
-            <h3>15+</h3>
-            <p>Years of Excellence</p>
-        </div>
-        <div class="stat-card">
-            <h3>100%</h3>
-            <p>ISO Certified Quality</p>
-        </div>
-    </div>
-
-    <!-- 8. FEATURED ACADEMIC COURSES -->
-    <div class="courses-section" id="courses">
-        <div class="section-heading">Our Key Certification Courses</div>
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-header">Software & Development</div>
-                <div class="course-body">
-                    <ul>
-                        <li>ADCA (Advanced Diploma in Computer Applications)</li>
-                        <li>DCA (Diploma in Computer Applications)</li>
-                        <li>Programming in Python & Core Java Structures</li>
-                    </ul>
+            <!-- CLASS 1 - 2 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Classes 1 & 2</span>
+                    <span class="class-tag">Early Tech Foundation</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Identifying smart devices around us</li>
+                            <li>Basic difference: Human vs Machine intelligence</li>
+                            <li>Fun activities with Google Quick, Draw!</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Intro to directions & basic computational step logic</li>
+                            <li>Block-based visual block arrangement (Scratch Jr)</li>
+                            <li>Understanding inputs (sensors/buttons) & outputs (lights)</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Literacy / Marketing</h3>
+                        <ul>
+                            <li>Introduction to digital screens & safe device handling</li>
+                            <li>Visual communication: Expressing ideas through icons</li>
+                            <li>Recognizing patterns and brand logos</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="course-card">
-                <div class="course-header">Accounting & Design</div>
-                <div class="course-body">
-                    <ul>
-                        <li>Computerized Financial Accounting (Tally Prime)</li>
-                        <li>Diploma in Desktop Publishing (DTP)</li>
-                        <li>Web Designing & Web Architecture Suite</li>
-                    </ul>
+
+            <!-- CLASS 3 - 4 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Classes 3 & 4</span>
+                    <span class="class-tag">Primary Innovators</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>How machines see: Introduction to Computer Vision basics</li>
+                            <li>Smart Assistants (Alexa, Siri) & voice command responses</li>
+                            <li>Introduction to data classification patterns</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Creating interactive animations in Scratch (Loops, Sounds)</li>
+                            <li>Virtual Robot navigation through basic mazes</li>
+                            <li>Introduction to Motors and Gears concept</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Literacy / Marketing</h3>
+                        <ul>
+                            <li>Understanding the concept of Internet & Websites</li>
+                            <li>Digital Citizenship: Cyber safety & netiquette</li>
+                            <li>Basic presentation skills using images and graphics</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="course-card">
-                <div class="course-header">Hardware & Networking</div>
-                <div class="course-body">
-                    <ul>
-                        <li>Diploma in Hardware Engineering</li>
-                        <li>Networking Essentials & IT Infrastructure</li>
-                        <li>Cyber Security Basic Protocols</li>
-                    </ul>
+
+            <!-- CLASS 5 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 5</span>
+                    <span class="class-tag">Intermediate Thinkers</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Introduction to AI ethics and decision making</li>
+                            <li>Games based on Machine Learning (Teachable Machine)</li>
+                            <li>Understanding Data Collection & Data Privacy</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Using conditional statements (If-Else) in block coding</li>
+                            <li>Introduction to microcontrollers (Micro:bit / Arduino block simulators)</li>
+                            <li>Designing a smart light automation block model</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Literacy / Marketing</h3>
+                        <ul>
+                            <li>Introduction to Digital Content Creation</li>
+                            <li>How Search Engines work (Google search tips & tricks)</li>
+                            <li>Basics of Graphic Design using online canvas tools</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <!-- CLASS 6 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 6</span>
+                    <span class="class-tag">Middle School - Level 1</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>The Three Pillars of AI: Data, Computer Vision, and NLP</li>
+                            <li>Introduction to Data Science & Spreadsheet data manipulation</li>
+                            <li>AI Project Cycle Phase 1: Problem Scoping</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Transition to text-based logic concepts</li>
+                            <li>Circuit design basics: Resistors, LEDs, and Power Supplies</li>
+                            <li>Simulating line-follower robot logic in Tinkercad</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Marketing</h3>
+                        <ul>
+                            <li>What is Digital Marketing? Traditional vs Digital Channels</li>
+                            <li>Introduction to Social Media Platforms & Audience reach</li>
+                            <li>Designing eye-catching banners and posters for online presence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLASS 7 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 7</span>
+                    <span class="class-tag">Middle School - Level 2</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Introduction to Natural Language Processing (Chatbots, Translators)</li>
+                            <li>AI Project Cycle Phase 2 & 3: Data Acquisition & Exploration</li>
+                            <li>Basics of Python Programming Language Syntax</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Working with Sensors: Ultrasonic, IR, and Temperature sensors</li>
+                            <li>Arduino programming basics using simulation tools</li>
+                            <li>Project: Building a distance-alert smart obstacle model</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Marketing</h3>
+                        <ul>
+                            <li>Basics of Content Marketing & Copywriting principles</li>
+                            <li>Email Marketing fundamentals and building a newsletter</li>
+                            <li>Introduction to Blogging & Website creation basics (CMS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLASS 8 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 8</span>
+                    <span class="class-tag">Middle School - Level 3</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Introduction to Machine Learning Frameworks & Neural Networks</li>
+                            <li>Python Programming: Conditionals, Loops, and Basic Lists</li>
+                            <li>AI Evaluation metrics: Understanding accuracy & system feedback</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Introduction to Bluetooth/Wi-Fi modules (ESP32 / IoT basics)</li>
+                            <li>Integrating multiple sensors and servo motors together</li>
+                            <li>Project: Designing a Smart Dustbin or Automated Home system</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Marketing</h3>
+                        <ul>
+                            <li>Introduction to Search Engine Optimization (SEO) & Keywords</li>
+                            <li>Understanding Video Marketing & basic video production tricks</li>
+                            <li>Web Analytics basics: Traffic, Clicks, and Bounce Rates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLASS 9 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 9</span>
+                    <span class="class-tag">CBSE Code 417 Aligned</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Comprehensive AI Project Cycle (Full framework management)</li>
+                            <li>Advanced Python: Functions, NumPy array environments</li>
+                            <li>Sustainable Development Goals (SDGs) integration with AI solutions</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Embedded C / Advanced Python controller scripts</li>
+                            <li>IoT integration with cloud data dashboards (ThingSpeak/Blynk)</li>
+                            <li>Project: Real-time environment monitoring weather node station</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Marketing</h3>
+                        <ul>
+                            <li>Social Media Marketing (SMM) strategies & ad campaigns</li>
+                            <li>On-Page and Off-Page SEO optimization pipelines</li>
+                            <li>Understanding E-Commerce architectures and digital gateways</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLASS 10 -->
+            <div class="class-row">
+                <div class="class-header">
+                    <span>Class 10</span>
+                    <span class="class-tag">CBSE Board Exam Ready</span>
+                </div>
+                <div class="pillar-container">
+                    <div class="pillar">
+                        <h3 class="ai-title">🧠 Artificial Intelligence</h3>
+                        <ul>
+                            <li>Advanced Computer Vision architectures & NLP deep pipelines</li>
+                            <li>Data Science: Advanced analytics with Pandas and Matplotlib</li>
+                            <li>Deploying functional Machine Learning models on local frameworks</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="robotics-title">🤖 Robotics & Coding</h3>
+                        <ul>
+                            <li>Autonomous system engineering: Navigation & calibration scripts</li>
+                            <li>Hardware optimization, troubleshooting, and power diagnostics</li>
+                            <li>Capstone Project: Completely operational IoT/Robotic Smart Framework</li>
+                        </ul>
+                    </div>
+                    <div class="pillar">
+                        <h3 class="marketing-title">📢 Digital Marketing</h3>
+                        <ul>
+                            <li>Search Engine Marketing (SEM) & Pay-Per-Click (PPC) ads setup</li>
+                            <li>Advanced Digital Analytics, ROI calculations, and growth funnels</li>
+                            <li>Capstone Project: Designing an end-to-end launch strategy for a brand</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- 9. NEW FRANCHISEE FORM INTERFACE (image_5dbd18.jpg) -->
-    <div class="franchise-section" id="franchise">
-        <div class="section-heading">Application for New Franchisee</div>
-        
-        <div class="form-grid-layout">
-            <!-- Form Parameters Input -->
-            <form class="franchise-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Name <span>*</span></label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="father-mother">Father/Mother's Name <span>*</span></label>
-                    <input type="text" id="father-mother" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email <span>*</span></label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mobile">Mobile No. <span>*</span></label>
-                    <input type="tel" id="mobile" required>
-                </div>
-                <div class="form-group full-row">
-                    <label for="address">Address <span>*</span></label>
-                    <textarea id="address" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="district">District <span>*</span></label>
-                    <input type="text" id="district" required>
-                </div>
-                <div class="form-group">
-                    <label for="state">State <span>*</span></label>
-                    <input type="text" id="state" required>
-                </div>
-                <div class="form-group full-row">
-                    <label for="message">Enquiry Message <span>*</span></label>
-                    <textarea id="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-
-            <!-- Right Column Visual Graphic Promo Block -->
-            <div class="info-side">
-                <div class="handshake-banner">
-                    <!-- Placeholder references image_5dbd18.jpg layout setup -->
-                    <span>[ Handshake Image Box ]</span>
-                </div>
-                <div class="promo-text">
-                    <h3>Become Franchisee</h3>
-                    <p>Share in our Growth and increase your Revenue</p>
-                    <div class="phone-call">Call:- 9932003362 / 8016785877</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 10. COMPREHENSIVE FOOTER -->
+    <!-- PORTFOLIO FOOTER -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Quick Contact Details</h4>
-                <p><strong>Head Office:</strong> New Delhi, India</p>
-                <p><strong>Phone:</strong> +91 9932003362</p>
-                <p><strong>Email:</strong> info@naicctc.co.in</p>
-            </div>
-            <div class="footer-col">
-                <h4>Find us on Google Map</h4>
-                <p>Our training grid maps are active across all regional locations in West Bengal, Uttar Pradesh, and Delhi sectors.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Like us on Facebook</h4>
-                <p>Follow our media portal for information on batch registrations, results, and student council alignments.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 National All India Council for Computer Training Centre. All Rights Reserved.
-        </div>
+        <p>&copy; 2026 Curriculum Showcase. Built for Teacher Portfolio & Repository Deployment.</p>
+        <p>Proudly hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
     </footer>
-
-    <!-- SIDEBAR AND FLOATING WIDGETS -->
-    <a href="#" class="quick-contact-sidebar">Quick Contact</a>
-    <a href="https://wa.me/919932003362" class="whatsapp-float">WhatsApp Helpdesk</a>
 
 </body>
 </html>
