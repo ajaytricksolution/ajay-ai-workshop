@@ -3,330 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & Next-Gen Robotics Workshop | Ajay Kumar Maurya</title>
+    <title>National All India Council for Computer Training Centre</title>
     <style>
-        /* Premium Offline CSS - No Internet Required */
         :root {
-            --primary: #4f46e5;
-            --primary-glow: #818cf8;
-            --secondary: #06b6d4;
-            --dark-bg: #090d16;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --primary-blue: #0b4da2;
+            --dark-blue: #083c82;
+            --accent-red: #e30613;
+            --notice-purple: #4a2e80;
+            --text-dark: #333333;
+            --light-gray: #f8fafc;
         }
 
-        body { 
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f8fafc; 
-            color: var(--text-main);
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcefe6; /* इमेजेस के बैकग्राउंड मैचिंग */
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
-        /* Professional Header Layout */
-        header { 
-            background: rgba(255, 255, 255, 0.96); 
-            box-shadow: 0 4px 30px rgba(0,0,0,0.03); 
-            padding: 14px 40px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            border-bottom: 1px solid #e2e8f0;
+        /* 1. TOP MINI BAR */
+        .top-mini-bar {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
         }
-        .nav-container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+
+        .login-panel-btn {
+            background: linear-gradient(to bottom, #ec4899, #db2777);
+            color: white;
+            border: 1px solid #be185d;
+            padding: 5px 18px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12px;
+            transition: transform 0.2s;
         }
-        .logo-group {
+        .login-panel-btn:hover { transform: scale(1.05); }
+
+        /* 2. MAIN INSTITUTION HEADER */
+        .main-header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
-        .school-badge {
-            background: #f1f5f9;
-            color: #334155;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 5px 10px;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
-            letter-spacing: 0.5px;
-        }
-        .kvs-color { border-left: 4px solid #b45309; }
-        .nvs-color { border-left: 4px solid #1d4ed8; }
-        
-        .logo-text { 
-            font-size: 22px; 
-            font-weight: 800; 
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-left: 5px;
-        }
-        nav a { 
-            margin-left: 25px; 
-            text-decoration: none; 
-            color: #475569; 
-            font-weight: 600; 
-            font-size: 15px;
-            transition: 0.2s;
-        }
-        nav a:hover { color: var(--primary); }
-        nav a.cta-nav { 
-            background: linear-gradient(135deg, var(--primary), #3b82f6);
+
+        .header-logo {
+            width: 90px;
+            height: 90px;
+            background-color: #0b4da2;
             color: white;
-            padding: 10px 24px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-        }
-        nav a.cta-nav:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4); }
-        
-        /* Sci-Fi Inspired AI Hero Section */
-        .hero { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #030712 100%); 
-            color: white; 
-            padding: 100px 20px; 
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; width: 350px; height: 350px; background: rgba(6, 182, 212, 0.15);
-            border-radius: 50%; top: -80px; left: -50px; filter: blur(60px);
-        }
-        .hero::after {
-            content: ''; position: absolute; width: 350px; height: 350px; background: rgba(99, 102, 241, 0.15);
-            border-radius: 50%; bottom: -80px; right: -50px; filter: blur(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .hero-container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: 1fr 1.3fr; 
-            gap: 50px; 
-            align-items: center; 
-            position: relative;
-            z-index: 10;
-        }
-        @media (max-width: 768px) { 
-            .hero-container { grid-template-columns: 1fr; text-align: center; } 
-            .hero-left { display: none; } 
-        }
-        
-        /* Floating Tech Badges */
-        .hero-left { display: flex; flex-direction: column; gap: 18px; align-items: center; }
-        .ai-badge-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 16px 28px;
-            border-radius: 16px;
-            width: 260px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 15px;
+        .header-text h1 {
+            color: #0b2e6e;
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            font-weight: 900;
             letter-spacing: 0.5px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            transition: 0.3s ease;
         }
-        .ai-badge-card:nth-child(1) { transform: rotate(-2deg) translateY(-10px); border-left: 4px solid var(--secondary); }
-        .ai-badge-card:nth-child(2) { transform: rotate(2deg) translateX(15px); border-left: 4px solid #a855f7; background: rgba(6, 182, 212, 0.05); }
-        .ai-badge-card:nth-child(3) { transform: rotate(-1deg) translateY(10px); border-left: 4px solid #ec4899; }
-        .ai-badge-card:hover { transform: scale(1.05) rotate(0deg); background: rgba(255,255,255,0.08); }
-        
-        /* Typography Content */
-        .hero-right h1 { font-size: 48px; margin: 0 0 20px 0; font-weight: 800; line-height: 1.15; color: #ffffff; }
-        .hero-right h1 span { background: linear-gradient(to right, #22d3ee, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-right p { font-size: 19px; color: #cbd5e1; margin-bottom: 30px; font-weight: 400; line-height: 1.6; }
-        .hero-right h2 { font-size: 22px; color: #f59e0b; margin-bottom: 35px; font-weight: 600; letter-spacing: 0.5px; }
-        
-        /* Middle Info Ribbon */
-        .ribbon-bar { background: #020617; color: #94a3b8; padding: 16px 10px; font-weight: 600; font-size: 14px; border-bottom: 1px solid #1e293b; }
-        .ribbon-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-        .ribbon-item { display: flex; align-items: center; gap: 8px; color: #e2e8f0; }
-        .dot-orange { color: #f97316; } .dot-green { color: #22c55e; } .dot-blue { color: #3b82f6; } .dot-pink { color: #ec4899; }
 
-        /* Class-wise Syllabus Section */
-        .topics-section { max-width: 1200px; margin: 90px auto; padding: 0 20px; text-align: center; }
-        .topics-section h2 { font-size: 36px; color: var(--text-main); margin-bottom: 12px; font-weight: 800; }
-        .topics-section p.section-desc { font-size: 18px; color: var(--text-muted); margin-bottom: 55px; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .topic-card { background: white; padding: 35px 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; transition: 0.3s ease; text-align: left; }
-        .topic-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #cbd5e1; }
-        
-        .card-icon-box { width: 45px; height: 45px; border-radius: 12px; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .box-1 { background: #eff6ff; color: #2563eb; } 
-        .box-2 { background: #ecfeff; color: #0891b2; } 
-        .box-3 { background: #fbf2ff; color: #7c3aed; } 
-        .box-4 { background: #fff1f2; color: #e11d48; }
-        
-        .topic-card h3 { font-size: 20px; color: var(--text-main); margin: 0 0 12px 0; font-weight: 700; }
-        .topic-card ul { padding-left: 18px; margin: 0; color: var(--text-muted); font-size: 14.5px; line-height: 1.6; }
-        .topic-card ul li { margin-bottom: 6px; }
+        .header-text .sub-tag {
+            background-color: #1e3a8a;
+            color: white;
+            font-size: 13px;
+            padding: 4px 18px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
 
-        /* Contact Section with Double Email */
-        .contact-panel { background: #090d16; color: white; padding: 75px 20px; text-align: center; position: relative; }
-        .contact-content { max-width: 900px; margin: 0 auto; }
-        .contact-content h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; }
-        .contact-content p { color: #94a3b8; font-size: 17px; margin-bottom: 45px; }
+        .header-text p {
+            margin: 4px 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* 3. NAVIGATION MENU */
+        .main-nav {
+            background-color: var(--primary-blue);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            display: block;
+            transition: background 0.2s;
+        }
+
+        .nav-links a.active { background-color: var(--accent-red); }
+        .nav-links a:hover:not(.active) { background-color: rgba(255,255,255,0.15); }
+
+        /* 4. 3 BIG ACTION BUTTONS */
+        .action-buttons-container {
+            max-width: 1200px;
+            margin: 25px auto 10px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .action-btn {
+            background-color: #0d2847;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            border-bottom: 4px solid #051424;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { background-color: #133a66; transform: translateY(-2px); }
+
+        /* 5. MAIN HERO WORKSPACE (BANNER + NOTICE BOARD) */
+        .hero-section {
+            max-width: 1200px;
+            margin: 15px auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
+
+        .banner-box {
+            background: #cbd5e1;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #334155;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('annual-meeting-placeholder.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .notice-board {
+            background-color: var(--notice-purple);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 340px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .notice-title {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 15px;
+            border-bottom: 2px solid #bbf7d0;
+        }
+
+        .notice-content-scroll {
+            padding: 15px;
+            color: white;
+            font-size: 13.5px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .notice-content-scroll ul { padding-left: 20px; margin: 0; }
+        .notice-content-scroll li { margin-bottom: 18px; line-height: 1.6; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 10px; }
+
+        .new-tag {
+            background-color: #ef4444;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 6px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* 6. STRIP BANNER */
+        .welcome-bar {
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        /* 7. COUNTER / STATS SECTION (For Educational Credibility) */
+        .stats-section {
+            max-width: 1200px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-blue);
+        }
+        .stat-card h3 { font-size: 32px; margin: 0 0 5px 0; color: var(--primary-blue); }
+        .stat-card p { margin: 0; font-weight: bold; color: #555; }
+
+        /* 8. FEATURED COURSES SECTION */
+        .courses-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-heading {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .course-card:hover { transform: translateY(-5px); }
+        .course-header { background: var(--primary-blue); color: white; padding: 15px; font-weight: bold; font-size: 16px; }
+        .course-body { padding: 20px; font-size: 14px; color: #555; }
+        .course-body ul { padding-left: 20px; margin: 0; }
+        .course-body li { margin-bottom: 8px; }
+
+        /* 9. FRANCHISE APPLICATION FORM SECTION (image_5dbd18.jpg) */
+        .franchise-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .form-grid-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 768px) { .form-grid-layout { grid-template-columns: 1fr; } }
+
+        .franchise-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 480px) { .franchise-form { grid-template-columns: 1fr; } }
+
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .full-row { grid-column: span 2; }
+        @media (max-width: 480px) { .full-row { grid-column: span 1; } }
+
+        label { font-size: 13.5px; font-weight: bold; }
+        label span { color: var(--accent-red); }
+        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+        textarea { height: 90px; resize: vertical; }
+
+        .submit-btn {
+            grid-column: span 2;
+            justify-self: start;
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover { background-color: #e0e0e0; }
+
+        /* Right Side Promo of Form */
+        .info-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .handshake-banner {
+            width: 100%;
+            height: 230px;
+            background: #cbd5e1 url('image_5dbd18.jpg') center/cover no-repeat;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+        .promo-text h3 { color: #7b1fa2; font-size: 24px; margin: 0 0 8px 0; font-weight: bold; }
+        .promo-text p { color: #00bcd4; font-weight: bold; font-size: 16px; margin: 0 0 20px 0; }
+        .phone-call { font-size: 24px; font-weight: bold; color: #222; letter-spacing: 0.5px; }
+
+        /* 10. FOOTER SYSTEM */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 6px solid var(--primary-blue);
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            font-size: 14px;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-0: 0 0 15px 0;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .footer-col p { line-height: 1.6; margin: 5px 0; }
         
-        .contact-grid-system { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-bottom: 45px; }
-        .info-block { background: rgba(255,255,255,0.03); padding: 25px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.07); text-align: center; }
-        .info-block h4 { margin: 0 0 10px 0; color: var(--secondary); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .info-block p { margin: 0; color: #f1f5f9; font-size: 16px; font-weight: 500; line-height: 1.5; }
-        .info-block .email-text { font-size: 14px; color: #cbd5e1; display: block; margin-top: 4px; }
-        
-        .footer-line { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; color: #475569; font-size: 14px; font-weight: 500; }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+        }
+
+        /* FLOATING SIDEBAR FOR QUICK CONTACT */
+        .quick-contact-sidebar {
+            position: fixed;
+            right: 0;
+            top: 45%;
+            background-color: #00bcd4;
+            color: white;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            padding: 15px 8px;
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 4px 0 0 4px;
+            text-decoration: none;
+            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        /* FIXED FIXED BUTTONS */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
 
-    <!-- STYLISH HEADER WITH UPDATED BADGES -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-group">
-                <div class="school-badge kvs-color">KVS ALIGNED</div>
-                <div class="school-badge nvs-color">NVS ALIGNED</div>
-                <div class="logo-text">NEXT-GEN AI</div>
-            </div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#curriculum">Class Syllabus</a>
-                <a href="#connect" class="cta-nav">Connect</a>
-            </nav>
-        </div>
-    </header>
+    <!-- 1. TOP MINI BAR -->
+    <div class="top-mini-bar">
+        <a href="#" class="login-panel-btn">Login Panel</a>
+        <div>📞 Helpdesk: 9932003362 / 8016785877</div>
+    </div>
 
-    <!-- SCI-FI INTELLIGENCE HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-left">
-                <div class="ai-badge-card">🧠 Machine Learning Basics</div>
-                <div class="ai-badge-card">🤖 Smart Automation Labs</div>
-                <div class="ai-badge-card">💻 Python Code Execution</div>
-            </div>
-            <div class="hero-right">
-                <!-- HERO & ROBOTICS VISUAL SECTION (TOP DARK BLOCK) -->
-                <div style="background: rgba(255, 255, 255, 0.03); border-radius: 16px; padding: 40px 30px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.1); width: 100%; box-sizing: border-box;">
-                    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
-                        <div style="flex: 1.5; min-width: 280px; text-align: left;">
-                            <span style="background: #ff6b6b; color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Next-Gen Tech Hub</span>
-                            <h1 style="font-size: 2.5rem; margin: 15px 0; font-weight: 800; line-height: 1.2; color: #fff;">Bringing Artificial Intelligence & Robotics to Schools</h1>
-                            <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.85; line-height: 1.6; color: #cbd5e1;">An elite, completely practical training module designed specifically to transform young minds into creators of smart technology frameworks.</p>
-                            <a href="#curriculum" style="background: #00d2ff; color: #0f2027; padding: 12px 28px; text-decoration: none; font-weight: bold; border-radius: 25px; display: inline-block; box-shadow: 0 4px 12px rgba(0,210,255,0.3); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Explore Curriculum</a>
-                        </div>
-                        <div style="flex: 1; min-width: 250px; text-align: center;">
-                            <!-- Premium Animated Robot Tech Graphic -->
-                            <svg viewBox="0 0 500 400" width="100%" style="max-width: 280px; filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.5));">
-                                <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" /><stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" /></linearGradient>
-                                </defs>
-                                <circle cx="250" cy="200" r="120" fill="url(#grad1)" opacity="0.08"/>
-                                <circle cx="250" cy="200" r="90" fill="url(#grad1)" opacity="0.15"/>
-                                <rect x="180" y="140" width="140" height="110" rx="25" fill="url(#grad1)" />
-                                <rect x="200" y="260" width="100" height="35" rx="12" fill="#203a43" />
-                                <circle cx="215" cy="185" r="14" fill="#fff" /> <circle cx="215" cy="185" r="6" fill="#0f2027" />
-                                <circle cx="285" cy="185" r="14" fill="#fff" /> <circle cx="285" cy="185" r="6" fill="#0f2027" />
-                                <path d="M 225 220 Q 250 235 275 220" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
-                                <line x1="250" y1="140" x2="250" y2="95" stroke="#00d2ff" stroke-width="5" />
-                                <circle cx="250" cy="90" r="10" fill="#ff6b6b" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <p>Welcome! I am a highly trained IT professional specializing in school-level Computer Science and Artificial Intelligence education, holding a Master of Computer Applications (MCA) degree. My passion lies in coaching students through hands-on robotics simulations and data science methodologies.</p>
-                <!-- Custom Capsule Badges -->
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    <span style="background: #1e3c72; color: white; padding: 7px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 5px rgba(30,60,114,0.15);">MCA Degree</span>
-                    <span style="background: #e1f0ff; color: #1e3c72; padding: 7px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">ADCA Specialist</span>
-                    <span style="background: #e1f0ff; color: #1e3c72; padding: 7px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">O Level Certified</span>
-                    <span style="background: #ffecdb; color: #ff6b6b; padding: 7px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">3+ Yrs Experience</span>
-                </div>
+    <!-- 2. MAIN HEADER (image_5db9f8.jpg के आधार पर) -->
+    <div class="main-header">
+        <div class="header-container">
+            <div class="header-logo">NAI CCTC LOGO</div>
+            <div class="header-text">
+                <h1>NATIONAL ALL INDIA COUNCIL FOR COMPUTER TRAINING CENTRE</h1>
+                <div class="sub-tag">An ISO 9001:2015 Certified Organization</div>
+                <p>(An Autonomous Instt. Regd. Under the Public Trust Act - Govt. of India, New Delhi)</p>
+                <p style="color: var(--primary-blue); font-size: 12px; margin-top: 5px;">Email:- info@naicctc.co.in :: Website:- www.naicctc.co.in</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- CURRICULUM SECTION -->
-    <section class="topics-section" id="curriculum">
-        <h2>Syllabus By Class Categories</h2>
-        <p class="section-desc">Progressive learning structure built perfectly for young minds.</p>
+    <!-- 3. NAVIGATION MENU -->
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#courses">Courses</a>
+            <a href="#franchise">Online Franchisee</a>
+            <a href="#">Centers</a>
+            <a href="#">Online Exam</a>
+            <a href="#">Downloads</a>
+            <a href="#">Contacts</a>
+            <a href="#">Login Panel</a>
+            <a href="#">Jobs</a>
+            <a href="#">Mock Test <span class="new-tag">New</span></a>
+        </div>
+    </nav>
+
+    <!-- 4. 3 ACTION LINKS -->
+    <div class="action-buttons-container">
+        <a href="#" class="action-btn">Students General Enquiry Form</a>
+        <a href="#" class="action-btn">Marksheet & Certificate Verification</a>
+        <a href="#" class="action-btn">Check Enrollment & Result</a>
+    </div>
+
+    <!-- 5. MAIN HERO AREA (BANNER + NOTICE BOARD) -->
+    <div class="hero-section">
+        <!-- Main Graphic Carousel Banner -->
+        <div class="banner-box">
+            <!-- Background Image handles Image Layout Verification -->
+            <span style="background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 4px;">Annual Meeting 2024-2025 Photo Frame</span>
+        </div>
+
+        <!-- Scrolling Notice Board -->
+        <div class="notice-board">
+            <div class="notice-title">Notice Board</div>
+            <div class="notice-content-scroll">
+                <ul>
+                    <li>
+                        <strong>Mock Test Facility:</strong> Online Mock Test Facility Introduced for our students and also for outside visitors. Please click on the "Mock Test" link in the menu bar. <span class="new-tag">New</span>
+                    </li>
+                    <li>
+                        <strong>Exam Schedule:</strong> Online Examination Facility available for all registered students from all branches across states.
+                    </li>
+                    <li>
+                        <strong>Franchise Registration:</strong> Apply now for new academic cycle franchise allocations via the lower portal interface.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. BOTTOM STRIP WELCOME BANNER -->
+    <div class="welcome-bar">
+        Welcome to NATIONAL ALL INDIA COUNCIL FOR COMPUTER TRAINING CENTRE
+    </div>
+
+    <!-- 7. EDUCATIONAL VALUE STATS BLOCK -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <h3>500+</h3>
+            <p>Verified Training Centers</p>
+        </div>
+        <div class="stat-card">
+            <h3>25,000+</h3>
+            <p>Students Certified</p>
+        </div>
+        <div class="stat-card">
+            <h3>15+</h3>
+            <p>Years of Excellence</p>
+        </div>
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>ISO Certified Quality</p>
+        </div>
+    </div>
+
+    <!-- 8. FEATURED ACADEMIC COURSES -->
+    <div class="courses-section" id="courses">
+        <div class="section-heading">Our Key Certification Courses</div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-header">Software & Development</div>
+                <div class="course-body">
+                    <ul>
+                        <li>ADCA (Advanced Diploma in Computer Applications)</li>
+                        <li>DCA (Diploma in Computer Applications)</li>
+                        <li>Programming in Python & Core Java Structures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header">Accounting & Design</div>
+                <div class="course-body">
+                    <ul>
+                        <li>Computerized Financial Accounting (Tally Prime)</li>
+                        <li>Diploma in Desktop Publishing (DTP)</li>
+                        <li>Web Designing & Web Architecture Suite</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header">Hardware & Networking</div>
+                <div class="course-body">
+                    <ul>
+                        <li>Diploma in Hardware Engineering</li>
+                        <li>Networking Essentials & IT Infrastructure</li>
+                        <li>Cyber Security Basic Protocols</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. NEW FRANCHISEE FORM INTERFACE (image_5dbd18.jpg) -->
+    <div class="franchise-section" id="franchise">
+        <div class="section-heading">Application for New Franchisee</div>
         
-        <div class="grid-container">
-            <div class="topic-card">
-                <div class="card-icon-box box-1">1 - 5</div>
-                <h3>Junior AI Tinkerers</h3>
-                <ul>
-                    <li>Scratch/Block-Based Visual Coding</li>
-                    <li>Introduction to Voice & Image Recognition</li>
-                    <li>Simple Smart Automation Logic</li>
-                </ul>
-            </div>
-            <div class="topic-card">
-                <div class="card-icon-box box-3">6 - 8</div>
-                <h3>AI Domains & Core Logic</h3>
-                <ul>
-                    <li>Deep Dive into Data Sciences</li>
-                    <li>Computer Vision (CV) Frameworks</li>
-                    <li>Natural Language Processing (NLP)</li>
-                    <li>Intro to Python Variables & Conditional Logic</li>
-                </ul>
-            </div>
-            <div class="topic-card">
-                <div class="card-icon-box box-4">9 - 10</div>
-                <h3>Advanced ML & Projects</h3>
-                <ul>
-                    <li>Applied Python Execution & Loops</li>
-                    <li>Training Neural Network Models</li>
-                    <li>Automated Decision Trees & Analytics</li>
-                    <li>Deploying Live Smart Machine Prototypes</li>
-                </ul>
+        <div class="form-grid-layout">
+            <!-- Form Parameters Input -->
+            <form class="franchise-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name <span>*</span></label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="father-mother">Father/Mother's Name <span>*</span></label>
+                    <input type="text" id="father-mother" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No. <span>*</span></label>
+                    <input type="tel" id="mobile" required>
+                </div>
+                <div class="form-group full-row">
+                    <label for="address">Address <span>*</span></label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="district">District <span>*</span></label>
+                    <input type="text" id="district" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State <span>*</span></label>
+                    <input type="text" id="state" required>
+                </div>
+                <div class="form-group full-row">
+                    <label for="message">Enquiry Message <span>*</span></label>
+                    <textarea id="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+            <!-- Right Column Visual Graphic Promo Block -->
+            <div class="info-side">
+                <div class="handshake-banner">
+                    <!-- Placeholder references image_5dbd18.jpg layout setup -->
+                    <span>[ Handshake Image Box ]</span>
+                </div>
+                <div class="promo-text">
+                    <h3>Become Franchisee</h3>
+                    <p>Share in our Growth and increase your Revenue</p>
+                    <div class="phone-call">Call:- 9932003362 / 8016785877</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- PROFESSIONAL CONTACT DUAL EMAIL PANEL -->
-    <section class="contact-panel" id="connect">
-        <div class="contact-content">
-            <h2>Initiate an AI Camp at Your Institution</h2>
-            <p>Get in touch to align schedules, evaluate lab requirements, or configure custom batches.</p>
-            
-            <div class="contact-grid-system">
-                <div class="info-block">
-                    <h4>Lead Instructor</h4>
-                    <p>Ajay Kumar Maurya</p>
-                </div>
-                <div class="info-block">
-                    <h4>Direct Contact</h4>
-                    <p>+91 9935833344</p>
-                </div>
-                <div class="info-block">
-                    <h4>Official Correspondence</h4>
-                    <span class="email-text">ajaytricksolution@gmail.com</span>
-                    <span class="email-text">jnvpatna52@gmail.com</span>
-                </div>
-                <div class="info-block">
-                    <h4>Base Location</h4>
-                    <p>Lucknow, Uttar Pradesh</p>
-                </div>
+    <!-- 10. COMPREHENSIVE FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Quick Contact Details</h4>
+                <p><strong>Head Office:</strong> New Delhi, India</p>
+                <p><strong>Phone:</strong> +91 9932003362</p>
+                <p><strong>Email:</strong> info@naicctc.co.in</p>
             </div>
-
-            <div class="footer-line">
-                &copy; 2026 Advanced AI School Workshop Initiative. Powered for Future Innovators.
+            <div class="footer-col">
+                <h4>Find us on Google Map</h4>
+                <p>Our training grid maps are active across all regional locations in West Bengal, Uttar Pradesh, and Delhi sectors.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Like us on Facebook</h4>
+                <p>Follow our media portal for information on batch registrations, results, and student council alignments.</p>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            &copy; 2026 National All India Council for Computer Training Centre. All Rights Reserved.
+        </div>
+    </footer>
 
-    <!-- WHATSAPP FLOATING BUTTON (Fixed Placement inside body) -->
-    <a href="https://wa.me/919935833344"
-       style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px 20px; border-radius:50px; text-decoration:none; font-weight:bold; z-index:9999; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        WhatsApp Us
-    </a>
+    <!-- SIDEBAR AND FLOATING WIDGETS -->
+    <a href="#" class="quick-contact-sidebar">Quick Contact</a>
+    <a href="https://wa.me/919932003362" class="whatsapp-float">WhatsApp Helpdesk</a>
 
 </body>
 </html>
