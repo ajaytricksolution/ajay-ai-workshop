@@ -3,353 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Kumar Maurya | KVS/NVS/CBSE Tech Portal & Portfolio</title>
+    <title>Maurya Innovation Labs | KVS / NVS / CBSE Tech Education Portal</title>
     <style>
         :root {
-            --primary-blue: #1e3a8a;
-            --dark-blue: #0f172a;
-            --teal-accent: #0d9488;
-            --orange-action: #ea580c;
-            --light-bg: #f8fafc;
+            --primary: #0f172a;
+            --brand-color: #0d9488;
+            --accent-orange: #ea580c;
+            --text-dark: #1e293b;
+            --bg-light: #f8fafc;
             --card-white: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* PREMIUM HEADER & BRANDING */
+        /* PREMIUM HEADER */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 45px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--teal-accent);
+            border-bottom: 5px solid var(--brand-color);
         }
 
-        .header-content h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin: 0 0 10px 0;
             font-weight: 800;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #38bdf8, #2dd4bf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .header-content p {
+        header p {
             font-size: 16px;
-            color: #cbd5e1;
-            margin: 5px 0;
+            color: #94a3b8;
+            margin: 5px 0 0 0;
         }
 
-        /* 5-PAGE MULTI-TAB NAVIGATION MENU */
+        /* 5-PAGE INTERACTIVE NAVIGATION */
         nav {
-            background-color: var(--primary-blue);
+            background-color: #1e293b;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
             background: none;
             border: none;
-            color: rgba(255, 255, 255, 0.85);
-            padding: 15px 25px;
+            color: #cbd5e1;
+            padding: 18px 25px;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .nav-btn:hover {
             color: white;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255,255,255,0.05);
         }
 
         .nav-btn.active-tab {
             color: white;
-            background-color: var(--teal-accent);
-            border-bottom: 4px solid var(--orange-action);
+            background-color: var(--brand-color);
+            border-bottom: 4px solid var(--accent-orange);
         }
 
-        /* APP PAGES CONTAINER */
-        .page-content {
+        /* MAIN WRAPPER */
+        .container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
-            min-height: 600px;
+            min-height: 500px;
         }
 
-        /* TAB CONTROLLER LOGIC USING CSS */
-        .tab-section {
+        /* MULTI-PAGE VIEW CONTROL */
+        .page-view {
             display: none;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: slideUp 0.4s ease-out;
         }
 
-        .tab-section.active-section {
+        .page-view.active-view {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PAGE 1: HOME & BIO STYLING */
-        .profile-card {
+        /* PAGE 1: LEADERSHIP TEAM CARD */
+        .profile-section {
             background: var(--card-white);
             border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 40px;
-            align-items: center;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             border: 1px solid #e2e8f0;
         }
 
-        @media (max-width: 768px) {
-            .profile-card { grid-template-columns: 1fr; text-align: center; }
-        }
-
-        .avatar-placeholder {
-            width: 250px;
-            height: 250px;
-            background: #cbd5e1 linear-gradient(135deg, #3b82f6, #06b6d4);
-            border-radius: 12px;
+        .team-grid {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            margin: 0 auto;
+            flex-direction: column;
+            gap: 35px;
+            margin-top: 25px;
         }
 
-        .bio-text h2 {
-            font-size: 32px;
-            color: var(--dark-blue);
-            margin: 0 0 5px 0;
+        .member-box {
+            padding-left: 22px;
+            border-left: 5px solid var(--brand-color);
         }
 
-        .bio-text .title-tag {
-            color: var(--teal-accent);
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+        .member-box.orange-border { border-left-color: var(--accent-orange); }
+        .member-box.blue-border { border-left-color: #2563eb; }
 
-        .qual-grid {
+        .member-box h3 { margin: 0; color: var(--primary); font-size: 24px; font-weight: 700; }
+        .member-designation { font-weight: 700; color: var(--brand-color); margin: 6px 0; font-size: 16px; }
+        .member-box.orange-border .member-designation { color: var(--accent-orange); }
+        .member-box.blue-border .member-designation { color: #2563eb; }
+        
+        .qualifications-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 20px 0;
+            margin-top: 12px;
         }
 
-        .qual-badge {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 6px 14px;
+        .qual-pill {
+            background-color: #f1f5f9;
+            color: #334155;
+            padding: 5px 14px;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 13px;
-            border: 1px solid #bae6fd;
         }
+        
+        .member-box.orange-border .qual-pill { background-color: #fff7ed; color: #c2410c; }
+        .member-box.blue-border .qual-pill { background-color: #eff6ff; color: #1d4ed8; }
 
         /* PAGE 2: WORKSHOP STYLING */
-        .workshop-banner {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200') center/cover;
+        .workshop-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200') center/cover;
             color: white;
-            padding: 40px;
+            padding: 45px;
             border-radius: 12px;
             text-align: center;
-            margin-bottom: 30px;
-            border: 1px solid #334155;
+            margin-bottom: 35px;
         }
 
-        .workshop-grid {
+        .workshop-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .workshop-card {
+        .w-card {
             background: var(--card-white);
+            padding: 30px;
             border-radius: 12px;
-            padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-            border-top: 5px solid var(--orange-action);
+            border-top: 6px solid var(--brand-color);
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         /* PAGE 3: CURRICULUM GRID STYLING */
-        .section-title {
+        .section-header-title {
             text-align: center;
-            font-size: 28px;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 35px;
             font-weight: 700;
         }
 
-        .class-row {
+        .curriculum-row-box {
             background: var(--card-white);
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
             border: 1px solid #e2e8f0;
             overflow: hidden;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .class-header {
-            background-color: var(--primary-blue);
+        .curriculum-top-heading {
+            background-color: #1e293b;
             color: white;
-            padding: 15px 25px;
-            font-size: 18px;
+            padding: 16px 25px;
+            font-size: 19px;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .pillar-container {
+        .pillar-grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        .pillar {
-            padding: 20px;
+        .curriculum-pillar {
+            padding: 25px;
             border-right: 1px solid #e2e8f0;
         }
 
-        .pillar:last-child { border-right: none; }
+        .curriculum-pillar:last-child { border-right: none; }
 
         @media (max-width: 768px) {
-            .pillar { border-right: none; border-bottom: 1px solid #e2e8f0; }
-            .pillar:last-child { border-bottom: none; }
+            .curriculum-pillar { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .curriculum-pillar:last-child { border-bottom: none; }
         }
 
-        .pillar h4 { margin: 0 0 12px 0; font-size: 15px; text-transform: uppercase; }
-        .pillar ul { padding-left: 20px; margin: 0; font-size: 14px; color: #475569; }
-        .pillar li { margin-bottom: 6px; }
+        .curriculum-pillar h4 { margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; }
+        .curriculum-pillar ul { padding-left: 20px; margin: 0; font-size: 14.5px; color: #475569; }
+        .curriculum-pillar li { margin-bottom: 8px; }
 
-        /* ROBOTICS PIC INTEGRATION SECTION */
-        .robotics-gallery {
+        /* ROBOTICS IMAGE GALLERY */
+        .gallery-title {
+            margin-top: 50px;
+            color: var(--primary);
+            font-size: 22px;
+            border-left: 5px solid var(--accent-orange);
+            padding-left: 12px;
+        }
+
+        .image-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
 
-        .robot-img-box {
-            background-color: #cbd5e1;
-            height: 180px;
-            border-radius: 8px;
+        .gallery-item {
+            background-color: #e2e8f0;
+            height: 200px;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .robot-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .robot-caption {
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-label {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             color: white;
-            padding: 8px;
-            font-size: 12px;
+            padding: 10px;
+            font-size: 13px;
             text-align: center;
             font-weight: 600;
         }
 
         /* PAGE 4: REGISTRATION FORM STYLING */
-        .form-container {
+        .form-card-wrapper {
             background: var(--card-white);
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
         }
 
-        .form-group {
+        .input-block {
             display: flex;
             flex-direction: column;
             gap: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
-        .form-group label { font-size: 14px; font-weight: 600; }
-        .form-group input, .form-group select, .form-group textarea {
-            padding: 11px;
+        .input-block label { font-size: 14px; font-weight: 700; color: #334155; }
+        .input-block input, .input-block select, .input-block textarea {
+            padding: 12px;
             border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 14px;
-            background-color: #fff;
+            border-radius: 8px;
+            font-size: 14.5px;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--teal-accent);
-            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-        }
-
-        .submit-btn {
-            background-color: var(--teal-accent);
+        .form-submit-btn {
+            background-color: var(--brand-color);
             color: white;
             border: none;
-            padding: 12px 30px;
-            font-size: 15px;
+            padding: 14px;
+            font-size: 16px;
             font-weight: 700;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s;
             width: 100%;
             text-transform: uppercase;
         }
 
-        .submit-btn:hover { background-color: #0f766e; }
-
         /* PAGE 5: CONTACTS STYLING */
-        .contact-grid {
+        .contact-box-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
-        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .contact-box-grid { grid-template-columns: 1fr; } }
 
-        .contact-card {
+        .c-box {
             background: var(--card-white);
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid #e2e8f0;
@@ -357,278 +333,336 @@
 
         /* FOOTER */
         footer {
-            background-color: var(--dark-blue);
+            background-color: var(--primary);
             color: #94a3b8;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
             margin-top: 60px;
             font-size: 14px;
-            border-top: 4px solid var(--teal-accent);
+            border-top: 4px solid var(--brand-color);
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTFOLIO HEADER METADATA -->
+    <!-- PORTFOLIO MAIN BANNER HEADER -->
     <header>
-        <div class="header-container">
-            <div class="header-content">
-                <h1>AJAY KUMAR MAURYA</h1>
-                <p>💡 TGT Computer Science | AI & Robotics Innovator | Curriculum Specialist</p>
-                <p style="font-size: 14px; color: #94a3b8;">Empowering KVS / NVS / CBSE Ecosystems with Next-Gen Skills</p>
-            </div>
+        <div class="header-main-box">
+            <h1>MAURYA INNOVATION LABS</h1>
+            <p>🚀 KVS / NVS / CBSE Synchronized Tech & AI Education Portal</p>
         </div>
     </header>
 
-    <!-- 5-PAGE INTERACTIVE NAVIGATION TABS -->
+    <!-- 5-PAGE DYNAMIC TAB PANEL INTERFACE -->
     <nav>
         <div class="nav-container">
-            <button class="nav-btn active-tab" onclick="switchTab(event, 'home')">Home / Profile</button>
-            <button class="nav-btn" onclick="switchTab(event, 'workshop')">AI Workshops</button>
-            <button class="nav-btn" onclick="switchTab(event, 'curriculum')">Curriculum (1-10)</button>
-            <button class="nav-btn" onclick="switchTab(event, 'registration')">Registration</button>
-            <button class="nav-btn" onclick="switchTab(event, 'contacts')">Contacts</button>
+            <button class="nav-btn active-tab" onclick="switchView(event, 'p-home')">Our Team / Bio</button>
+            <button class="nav-btn" onclick="switchView(event, 'p-workshop')">AI Workshops</button>
+            <button class="nav-btn" onclick="switchView(event, 'p-curriculum')">Syllabus Grid (1-10)</button>
+            <button class="nav-btn" onclick="switchView(event, 'p-register')">Registration</button>
+            <button class="nav-btn" onclick="switchView(event, 'p-contacts')">Contacts</button>
         </div>
     </nav>
 
-    <!-- CORE APP CONTENT INTERFACE -->
-    <div class="page-content">
+    <!-- CONTENT DISPLAY ENGINE CONTAINER -->
+    <div class="container">
 
-        <!-- ================= PAGE 1: HOME & BIO ================= -->
-        <div id="home" class="tab-section active-section">
-            <div class="profile-card">
-                <div class="avatar-side">
-                    <!-- Avatar box designed with gradient placeholder ready for image placement -->
-                    <div class="avatar-placeholder">
-                        <span>[ Ajay Kumar Maurya Pic ]</span>
-                    </div>
-                </div>
-                <div class="bio-text">
-                    <h2>Ajay Kumar Maurya</h2>
-                    <div class="title-tag">TGT Computer Science Professional</div>
-                    <p>एक समर्पित और परिणाम-उन्मुख तकनीकी शिक्षक, जिन्हें **TGT Computer Science** के रूप में **3 वर्षों का उत्कृष्ट अनुभव** प्राप्त है। KVS, NVS और CBSE बोर्ड के मानकों के अनुसार क्लास 1 से 10 तक के बच्चों को कोडिंग, आर्टिफ़िशियल इंटेलिजेंस और एडवांस्ड रोबोटिक्स सिखाने में निपुण।</p>
-                    
-                    <h4 style="margin: 20px 0 10px 0; color: var(--dark-blue);">Professional Qualifications & Credentials:</h4>
-                    <div class="qual-grid">
-                        <div class="qual-badge">MCA (Master of Computer Applications)</div>
-                        <div class="qual-badge">BCA (Bachelor of Computer Applications)</div>
-                        <div class="qual-badge">B.ED (Bachelor of Education)</div>
-                        <div class="qual-badge">C-TET Qualified</div>
-                        <div class="qual-badge">O Level Certified</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= PAGE 2: AI WORKSHOPS ================= -->
-        <div id="workshop" class="tab-section">
-            <div class="workshop-banner">
-                <h2 style="margin: 0 0 10px 0; font-size: 28px;">Artificial Intelligence Skill Workshops</h2>
-                <p>Bridging the gap between school curriculum and real-world industrial intelligence.</p>
-            </div>
-
-            <div class="workshop-grid">
-                <div class="workshop-card">
-                    <h3 style="color: var(--primary-blue); margin-top: 0;">1. AI Bootcamps for Primary Level</h3>
-                    <p><strong>लक्ष्य:</strong> Class 1 से 5 के छात्रों में मशीन लर्निंग के प्रति उत्सुकता जगाना।</p>
-                    <p>टूलकिट मैपिंग के साथ वॉयस कमांड मॉडल्स, गूगल टीचेबल मशीन और एआई एथिक्स की शुरुआती समझ पैदा करना।</p>
-                </div>
-                <div class="workshop-card">
-                    <h3 style="color: var(--primary-blue); margin-top: 0;">2. Computer Vision & NLP Intensive</h3>
-                    <p><strong>लक्ष्य:</strong> Middle School (Class 6 से 8) के लिए व्यावहारिक कोडिंग लैब।</p>
-                    <p>छात्रों को इमेज क्लासिफिकेशन मॉडल्स, नेचुरल लैंग्वेज प्रोसेसिंग चैटबॉट्स और डेटा साइंस के बेसिक्स को कस्टमाइज़ करना सिखाया जाता है।</p>
-                </div>
-                <div class="workshop-card">
-                    <h3 style="color: var(--primary-blue); margin-top: 0;">3. CBSE Code 417 Board Masterclass</h3>
-                    <p><strong>लक्ष्य:</strong> High School (Class 9 & 10) के बोर्ड स्किल सब्जेक्ट्स के लिए कम्प्लीट ओरिएंटेशन।</p>
-                    <p>एडवांस्ड पाइथन प्रोग्रामिंग (NumPy, Pandas) और संपूर्ण एआई प्रोजेक्ट साइकिल फ्रेमवर्क का प्रैक्टिकल एक्जीक्यूशन।</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= PAGE 3: MASTER CURRICULUM ================= -->
-        <div id="curriculum" class="tab-section">
-            <div class="section-title">Class-Wise Curriculum Matrix (1 to 10)</div>
-            
-            <!-- Classes 1-3 -->
-            <div class="class-row">
-                <div class="class-header"><span>Classes 1 to 3</span><span style="font-size:12px; background:var(--teal-accent); padding:3px 8px; border-radius:4px;">FOUNDATION</span></div>
-                <div class="pillar-container">
-                    <div class="pillar">
-                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
-                        <ul><li>मशीन और इंसानी दिमाग का अंतर</li><li>AI खिलौने और स्मार्ट असिस्टेंट्स</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
-                        <ul><li>Scratch Jr ब्लॉक कोडिंग बेसिक्स</li><li>डायरेक्शनल लॉजिक और पजल्स</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
-                        <ul><li>इंटरनेट स्क्रीन सेफ्टी गाइडलाइन्स</li><li>लोगो और ब्रांडिंग की पहचान</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Classes 4-6 -->
-            <div class="class-row">
-                <div class="class-header"><span>Classes 4 to 6</span><span style="font-size:12px; background:var(--teal-accent); padding:3px 8px; border-radius:4px;">INTERMEDIATE</span></div>
-                <div class="pillar-container">
-                    <div class="pillar">
-                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
-                        <ul><li>डाटा एक्विजिशन और कंप्यूटर विज़न</li><li>गूगल क्विक ड्रा एक्टिविटीज</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
-                        <ul><li>Scratch 3.0 एनिमेशन व लूप्स</li><li>टिनकैरकैड पर वर्चुअल सर्किट सिमुलेशन</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
-                        <ul><li>सर्च इंजन (Google) काम कैसे करता है</li><li>कैनवा टूल्स से बैनर डिजाइनिंग</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Classes 7-8 -->
-            <div class="class-row">
-                <div class="class-header"><span>Classes 7 to 8</span><span style="font-size:12px; background:var(--teal-accent); padding:3px 8px; border-radius:4px;">ADVANCED LABS</span></div>
-                <div class="pillar-container">
-                    <div class="pillar">
-                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
-                        <ul><li>NLP चैटबॉट्स और मशीन लर्निंग टूल्स</li><li>पाइथन (Python) प्रोग्रामिंग सिंटैक्स</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
-                        <ul><li>अर्ड्यूनो (Arduino) माइक्रो-कंट्रोलर कोडिंग</li><li>सेंसर इंटीग्रेशन (Ultrasonic/IR)</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
-                        <ul><li>SEO (सर्च इंजन ऑप्टिमाइजेशन) बेसिक्स</li><li>कंटेंट राइटिंग और ईमेल ब्लॉग्स</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Classes 9-10 -->
-            <div class="class-row">
-                <div class="class-header"><span>Classes 9 & 10</span><span style="font-size:12px; background:var(--orange-action); padding:3px 8px; border-radius:4px;">CBSE COMPLIANT</span></div>
-                <div class="pillar-container">
-                    <div class="pillar">
-                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
-                        <ul><li>CBSE Code 417 अलाइंड प्रोजेक्ट साइकिल</li><li>पाइथन लैब्स (NumPy, Pandas)</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
-                        <ul><li>IoT क्लाउड इंटीग्रेशन (Blynk, ThingSpeak)</li><li>स्मार्ट डस्टबिन व ऑटोमेशन प्रोजेक्ट्स</li></ul>
-                    </div>
-                    <div class="pillar">
-                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
-                        <ul><li>गूगल एड्स (PPC) और सोशल मीडिया मार्केटिंग</li><li>वेबसाइट एनालिटिक्स और सेल्स फनल</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROBOTICS HIGH QUALITY IMAGE GALLERY PLACEHOLDERS -->
-            <h3 style="margin-top: 40px; color: var(--dark-blue);">🤖 Robotics Live Lab Prototyping</h3>
-            <div class="robotics-gallery">
-                <div class="robot-img-box">
-                    <img src="https://images.unsplash.com/photo-1531746790731-6c2079dec51a?auto=format&fit=crop&q=80&w=500" alt="AI Robot Face">
-                    <div class="robot-caption">Autonomous Humanoid Navigation Block</div>
-                </div>
-                <div class="robot-img-box">
-                    <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=500" alt="Arduino Circuit">
-                    <div class="robot-caption">Microcontroller Sensor Array Lab</div>
-                </div>
-                <div class="robot-img-box">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=500" alt="IoT Device Setup">
-                    <div class="robot-caption">Smart Automation IoT Nodes</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= PAGE 4: REGISTRATION ================= -->
-        <div id="registration" class="tab-section">
-            <div class="form-container">
-                <h2 style="text-align: center; margin-top: 0; color: var(--primary-blue);">Workshop Enrollment Form</h2>
-                <p style="text-align: center; font-size: 14px; color: var(--text-muted); margin-bottom: 30px;">Register your school batch or individual seats for the upcoming AI & Robotics session.</p>
+        <!-- ================= PAGE 1: USER BIO & LEADERSHIP TEAM ================= -->
+        <div id="p-home" class="page-view active-view">
+            <div class="profile-section">
+                <h2 style="margin-top: 0; color: var(--primary); font-size: 28px; text-align: center;">Core Leadership & Academic Board</h2>
+                <p style="text-align: center; color: #475569; max-width: 800px; margin: 0 auto 30px auto;">हमारा संयुक्त उद्देश्य भारतीय स्कूली शिक्षा व्यवस्था (CBSE/NEP 2020) में आर्टिफिशियल इंटेलिजेंस, कोडिंग और रोबोटिक्स हार्डवेयर को बेहद सरल, बाल-केंद्रित और व्यावहारिक तरीके से लागू करना है।</p>
                 
-                <form action="#" method="POST" onsubmit="alert('Registration Request Submitted Successfully!'); return false;">
-                    <div class="form-group">
-                        <label>Candidate / School Name</label>
-                        <input type="text" required placeholder="Enter complete legal name">
+                <div class="team-grid">
+                    
+                    <!-- 1. AJAY KUMAR MAURYA (DIRECTOR) -->
+                    <div class="member-box">
+                        <h3>Ajay Kumar Maurya</h3>
+                        <div class="member-designation">Director & Lead Technology Instructor</div>
+                        <p style="margin: 8px 0;">3 वर्षों के सघन TGT Computer Science अनुभव के साथ तकनीकी विज़न, एडवांस पाइथन कोडिंग लैब्स, CBSE Skill Subject Code 417 और मिडिल/सेकेंडरी स्कूल के लिए लाइव रोबोटिक्स हार्डवेयर लैब्स का नेतृत्व।</p>
+                        <div class="qualifications-container">
+                            <span class="qual-pill">BCA</span>
+                            <span class="qual-pill">MCA</span>
+                            <span class="qual-pill">B.ED</span>
+                            <span class="qual-pill">C-TET Qualified</span>
+                            <span class="qual-pill">O Level Certified</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Target Segment / Class Group</label>
+
+                    <!-- 2. SUNAINA MAURYA (CO-DIRECTOR) -->
+                    <div class="member-box orange-border">
+                        <h3>Sunaina Maurya</h3>
+                        <div class="member-designation">Co-Director & Head of Primary Pedagogy</div>
+                        <p style="margin: 8px 0;">अनुभवी PRT Teacher के रूप में प्राइमरी विंग (Class 1-5) के छात्रों के लिए विशेष रूप से डिजाइन किए गए एआई कॉग्निटिव मॉड्यूल्स, गेम-बेस्ड कोडिंग टूल्स (Scratch Jr), अकैडमिक शेड्यूलिंग और बाल-केंद्रित शिक्षण पद्धतियों का संपूर्ण प्रबंधन।</p>
+                        <div class="qualifications-container">
+                            <span class="qual-pill">PRT Educator Expert</span>
+                            <span class="qual-pill">Early Childhood Coding Lead</span>
+                            <span class="qual-pill">Co-Founder</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. SHYAM MAURYA (HEAD OF MANAGEMENT) -->
+                    <div class="member-box blue-border">
+                        <h3>Shyam Maurya</h3>
+                        <div class="member-designation">Head of Management & Business Development</div>
+                        <p style="margin: 8px 0;">संस्थागत आउटरीच (Institutional Outreach) और प्रशासनिक ऑपरेशंस के प्रमुख। विभिन्न प्रतिष्ठित विद्यालयों (KVS/NVS/CBSE Schools) के साथ नेटवर्किंग, इंफ्रास्ट्रक्चर मैनेजमेंट, वर्कशॉप शेड्यूलिंग और अकैडमी की स्ट्रैटेजिक ग्रोथ का सफल संचालन।</p>
+                        <div class="qualifications-container">
+                            <span class="qual-pill">BBA (Bachelor of Business Administration)</span>
+                            <span class="qual-pill">Corporate & School Management</span>
+                            <span class="qual-pill">Institutional Growth Lead</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: ARTIFICIAL INTELLIGENCE WORKSHOPS ================= -->
+        <div id="p-workshop" class="page-view">
+            <div class="workshop-hero">
+                <h2 style="margin: 0 0 10px 0; font-size: 30px;">Artificial Intelligence & ML Specialized Workshops</h2>
+                <p>Curated tech sessions for building next-generation digital intelligence capabilities in schools.</p>
+            </div>
+
+            <div class="workshop-cards-grid">
+                <div class="w-card">
+                    <h3 style="color: var(--brand-color); margin-top: 0;">🎯 Early AI Cognition Bootcamp</h3>
+                    <p><strong>लक्षित समूह:</strong> Class 1 to 5 (Primary Level)</p>
+                    <p>खेल-खेल में बच्चों को AI टूल्स (Teachable Machine, Quick Draw) के ज़रिए वॉयस और विज़ुअल पैटर्न्स की पहचान कराना और कोडिंग के प्रति रुचि पैदा करना।</p>
+                </div>
+                <div class="w-card">
+                    <h3 style="color: var(--brand-color); margin-top: 0;">🎯 Middle School NLP & CV Lab</h3>
+                    <p><strong>लक्षित समूह:</strong> Class 6 to 8 (Middle Level)</p>
+                    <p>नेचुरल लैंग्वेज प्रोसेसिंग (NLP) चैटबॉट्स बनाना, कंप्यूटर विज़न (CV) मॉडल्स का बेसिक आर्किटेक्चर और ब्लॉक-टू-टेक्स्ट कोडिंग ट्रांजिशन लैब्स।</p>
+                </div>
+                <div class="w-card">
+                    <h3 style="color: var(--brand-color); margin-top: 0;">🎯 CBSE Skill Subject Code 417 Prep</h3>
+                    <p><strong>लक्षित समूह:</strong> Class 9 & 10 (Secondary Level)</p>
+                    <p>CBSE बोर्ड परीक्षा के लिए एआई प्रोजेक्ट साइकिल, डेटा साइंस एनवायर्नमेंट (Pandas, NumPy लाइब्रेरीज़) और पाइथन प्रोग्रामिंग फ्रेमवर्क पर सघन प्रैक्टिकल तैयारी।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 3: COMPREHENSIVE CURRICULUM GRID ================= -->
+        <div id="p-curriculum" class="page-view">
+            <div class="section-header-title">Master Curriculum Framework (Class 1 to 10)</div>
+
+            <!-- Block 1: Classes 1-3 -->
+            <div class="curriculum-row-box">
+                <div class="curriculum-top-heading">
+                    <span>Classes 1, 2 & 3</span>
+                    <span style="font-size: 12px; background-color: var(--brand-color); padding: 4px 10px; border-radius: 4px;">LEVEL 1: BASELINE</span>
+                </div>
+                <div class="pillar-grid-layout">
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
+                        <ul>
+                            <li>आसपास की स्मार्ट डिवाइसेज की पहचान</li>
+                            <li>इंसानी बुद्धि बनाम मशीन इंटेलिजेंस</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
+                        <ul>
+                            <li>Scratch Jr विज़ुअल ब्लॉक अलाइनमेंट</li>
+                            <li>बुनियादी दिशात्मक (Directional) कोडिंग लॉजिक</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
+                        <ul>
+                            <li>डिजिटल स्क्रीन सेफ्टी और डिवाइसेज की समझ</li>
+                            <li>विज़ुअल लोगो और ब्रांड रिकग्निशन पजल्स</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 2: Classes 4-6 -->
+            <div class="curriculum-row-box">
+                <div class="curriculum-top-heading">
+                    <span>Classes 4, 5 & 6</span>
+                    <span style="font-size: 12px; background-color: var(--brand-color); padding: 4px 10px; border-radius: 4px;">LEVEL 2: TRANSITION</span>
+                </div>
+                <div class="pillar-grid-layout">
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
+                        <ul>
+                            <li>डेटा क्लासिफिकेशन के बुनियादी नियम</li>
+                            <li>AI प्रोजेक्ट साइकिल का पहला चरण</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
+                        <ul>
+                            <li>कंडीशनल स्टेटमेंट्स (If-Else) ब्लॉक्स का उपयोग</li>
+                            <li>Tinkercad पर वर्चुअल सर्किट और LED सिमुलेशन</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
+                        <ul>
+                            <li>सर्च इंजन कैसे काम करते हैं (SEO बेसिक्स)</li>
+                            <li>Canva टूल्स का उपयोग करके पोस्टर डिज़ाइनिंग</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 3: Classes 7-8 -->
+            <div class="curriculum-row-box">
+                <div class="curriculum-top-heading">
+                    <span>Classes 7 & 8</span>
+                    <span style="font-size: 12px; background-color: var(--brand-color); padding: 4px 10px; border-radius: 4px;">LEVEL 3: EXPERIMENTAL</span>
+                </div>
+                <div class="pillar-grid-layout">
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
+                        <ul>
+                            <li>NLP टूल्स और ट्रांसलेशन एल्गोरिदम की समझ</li>
+                            <li>पाइथन (Python) बेसिक सिंटैक्स और डेटा टाइप्स</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
+                        <ul>
+                            <li>अर्ड्यूनो (Arduino) माइक्रो-कंट्रोलर का परिचय</li>
+                            <li>Ultrasonic और IR सेंसर्स के साथ कोडिंग लैब्स</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
+                        <ul>
+                            <li>कंटेंट मार्केटिंग और ब्लॉगिंग आर्किटेक्चर</li>
+                            <li>ईमेल न्यूज़लेटर और ट्रैफिक मीट्रिक्स का विश्लेषण</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 4: Classes 9-10 -->
+            <div class="curriculum-row-box">
+                <div class="curriculum-top-heading">
+                    <span>Classes 9 & 10</span>
+                    <span style="font-size: 12px; background-color: var(--accent-orange); padding: 4px 10px; border-radius: 4px;">LEVEL 4: BOARD ALIGNED</span>
+                </div>
+                <div class="pillar-grid-layout">
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #2563eb;">🧠 Artificial Intelligence</h4>
+                        <ul>
+                            <li>CBSE Code 417 अलाइंड एआई प्रोजेक्ट साइकिल</li>
+                            <li>एडवांस्ड पाइथन (NumPy, Pandas डेटाफ्रेम लैब्स)</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #db2777;">🤖 Robotics & Coding</h4>
+                        <ul>
+                            <li>IoT क्लाउड इंटीग्रेशन (ThingSpeak / Blynk)</li>
+                            <li>स्मार्ट डस्टबिन और होम ऑटोमेशन प्रोटोटाइप कोडिंग</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-pillar">
+                        <h4 style="color: #0d9488;">📢 Digital Marketing</h4>
+                        <ul>
+                            <li>सोशल मीडिया एडवरटाइजिंग और PPC कैंपेन सेटिंग्स</li>
+                            <li>वेबसाइट फनल और कन्वर्शन रेट ऑप्टिमाइजेशन</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CURATED HIGH-QUALITY ROBOTICS IMAGES -->
+            <h3 class="gallery-title">🤖 Live Robotics Hardware Lab Integration</h3>
+            <div class="image-gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c2079dec51a?auto=format&fit=crop&q=80&w=500" alt="Robotics System">
+                    <div class="gallery-label">Autonomous Smart Machine Processing Nodes</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=500" alt="Arduino Setup">
+                    <div class="gallery-label">Microcontroller Prototyping Board</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=500" alt="IoT Device">
+                    <div class="gallery-label">IoT Based Automated Home Framework</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 4: REGISTRATION FORM ================= -->
+        <div id="p-register" class="page-view">
+            <div class="form-card-wrapper">
+                <h3 style="text-align: center; margin-top:0; color: var(--primary); font-size: 24px;">Workshop Enrollment Portal</h3>
+                <p style="text-align: center; color: #64748b; font-size:14px; margin-bottom: 30px;">अपनी क्लास या स्कूल ग्रुप के लिए एडवांस एआई और रोबोटिक्स वर्कशॉप बुक करें।</p>
+                
+                <form action="#" method="POST" onsubmit="alert('Thank you! Our Management Team (Shyam Maurya) will contact you shortly.'); return false;">
+                    <div class="input-block">
+                        <label>Full Name / School Authority</label>
+                        <input type="text" required placeholder="Enter name or institution name">
+                    </div>
+                    <div class="input-block">
+                        <label>Select Target Student Batch</label>
                         <select required>
-                            <option value="">Select Target Cohort</option>
-                            <option>Primary Group (Class 1-5)</option>
-                            <option>Middle Group (Class 6-8)</option>
-                            <option>Secondary Group (Class 9-10)</option>
+                            <option value="">-- Choose Category --</option>
+                            <option>Primary Level (Class 1-5 / Lead by Sunaina Maurya)</option>
+                            <option>Middle Level (Class 6-8 / Lead by Ajay Kumar Maurya)</option>
+                            <option>Secondary Level (Class 9-10 Boards / Lead by Ajay Kumar Maurya)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Contact Email Address</label>
-                        <input type="email" required placeholder="name@example.com">
+                    <div class="input-block">
+                        <label>Active Email Address</label>
+                        <input type="email" required placeholder="example@domain.com">
                     </div>
-                    <div class="form-group">
-                        <label>Mobile Number / WhatsApp No.</label>
-                        <input type="tel" required placeholder="Enter 10-digit mobile number">
+                    <div class="input-block">
+                        <label>Contact/WhatsApp Number</label>
+                        <input type="tel" required placeholder="10-digit mobile number">
                     </div>
-                    <div class="form-group">
-                        <label>Specific Training Requirements / Message</label>
-                        <textarea placeholder="Tell us about specific module preferences (e.g., Python Labs, IoT setup, Digital Ads Strategy)"></textarea>
+                    <div class="input-block">
+                        <label>Custom Lab/Syllabus Requirements</label>
+                        <textarea placeholder="Specify if you need specialized modules like Python Data Science, Arduino hardware kits or Digital Ads Setup..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Submit Secure Registration</button>
+                    <button type="submit" class="form-submit-btn">Submit Secure Application</button>
                 </form>
             </div>
         </div>
 
-        <!-- ================= PAGE 5: CONTACTS ================= -->
-        <div id="contacts" class="tab-section">
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3 style="color: var(--primary-blue); margin-top: 0;">Official Communication</h3>
-                    <p>🎯 <strong>Educator:</strong> Ajay Kumar Maurya</p>
-                    <p>💼 <strong>Role:</strong> TGT Computer Science Expert</p>
-                    <p>📧 <strong>Email Support:</strong> ajay.maurya.tgt@example.com</p>
-                    <p>🌐 <strong>GitHub Portfolio:</strong> github.com/ajay-kumar-maurya</p>
+        <!-- ================= PAGE 5: OFFICIAL CONTACTS ================= -->
+        <div id="p-contacts" class="page-view">
+            <div class="contact-box-grid">
+                <div class="c-box">
+                    <h3 style="color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--brand-color); padding-bottom: 10px;">Direct Contacts</h3>
+                    <p style="margin-top:20px;">👤 <strong>Director & Lead Technology Instructor:</strong> Ajay Kumar Maurya</p>
+                    <p>👩‍🏫 <strong>Co-Director & Head of Primary Pedagogy:</strong> Sunaina Maurya</p>
+                    <p>💼 <strong>Head of Management & Growth:</strong> Shyam Maurya (BBA)</p>
+                    <p>📧 <strong>Corporate Email Address:</strong> labs.maurya@example.com</p>
                 </div>
-                <div class="contact-card">
-                    <h3 style="color: var(--primary-blue); margin-top: 0;">School Network Support</h3>
-                    <p>यदि आप अपने **KVS / NVS या CBSE सम्बद्ध स्कूल** में नेशनल एजुकेशन पॉलिसी (NEP 2020) के स्किल मॉड्यूल के तहत आर्टिफिशियल इंटेलिजेंस और रोबोटिक्स को लागू करवाना चाहते हैं, तो आप सीधे संपर्क स्थापित कर सकते हैं।</p>
-                    <p style="font-weight: bold; color: var(--orange-action);">⏳ Response Time: 24-48 Hours</p>
+                <div class="c-box">
+                    <h3 style="color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--brand-color); padding-bottom: 10px;">Institutional Support</h3>
+                    <p>यदि आप अपने **केन्द्रीय विद्यालय (KVS), नवोदय विद्यालय (NVS) या CBSE** स्कूल में राष्ट्रीय शिक्षा नीति (NEP 2020) के तहत स्किल कोर्सेस का सेटअप या लैब ओरिएंटेशन करवाना चाहते हैं, तो संपर्क फ़ॉर्म या ऊपर दिए मेल का उपयोग करें। हमारे मैनेजमेंट हेड (श्याम मौर्य) आपसे जल्द संपर्क करेंगे।</p>
+                    <p style="color: var(--accent-orange); font-weight: 700; margin-top: 25px;">⚡ Average Response Window: 24 Hours</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- PERSISTENT APP FOOTER -->
+    <!-- MAIN REPOSITORY FOOTER -->
     <footer>
-        <p>&copy; 2026 Ajay Kumar Maurya | Computer Science Showcase Repository Engine.</p>
-        <p>Built with high fidelity frameworks for seamless GitHub Pages integration.</p>
+        <p>&copy; 2026 Maurya Innovation Labs | Built with Adaptive Multi-Tab Architecture for GitHub Pages.</p>
     </footer>
 
-    <!-- INTERACTIVE PAGE ROUTER ENGINE (JAVASCRIPT) -->
+    <!-- INTERACTIVE VIEW ROUTER SCRIPT (JAVASCRIPT) -->
     <script>
-        function switchTab(event, sectionId) {
-            // 1. Hide all active sections
-            const sections = document.querySelectorAll('.tab-section');
-            sections.forEach(section => {
-                section.classList.remove('active-section');
-            });
+        function switchView(event, targetViewId) {
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => view.classList.remove('active-view'));
 
-            // 2. Remove active class styling from navigation menu buttons
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(button => {
-                button.classList.remove('active-tab');
-            });
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active-tab'));
 
-            // 3. Show target selection page UI element
-            document.getElementById(sectionId).classList.add('active-section');
-
-            // 4. Inject active style to trigger button target
+            document.getElementById(targetViewId).classList.add('active-view');
             event.currentTarget.classList.add('active-tab');
             
-            // 5. Scroll smoothly back to view header line top point
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
